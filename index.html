@@ -33,4 +33,5 @@ function status(){let seen=Object.keys(S.seen||{}).length, mastered=C.filter(c=>
 function resetStats(){if(confirm("学習履歴をリセットしますか？")){localStorage.removeItem("ect");location.reload()}}
 function listen(id){let c=C.find(x=>x.id==id);if(!("speechSynthesis" in window))return;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(c.e);u.lang="en-US";u.rate=.88;speechSynthesis.speak(u)}
 today();
-<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("./sw.js").catch(()=>{});}</script></body></html>
+if("serviceWorker" in navigator){navigator.serviceWorker.register("./sw.js").catch(()=>{});}
+</script></body></html>
